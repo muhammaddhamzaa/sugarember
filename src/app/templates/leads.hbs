@@ -1,0 +1,56 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+   <div class="navbar-header">
+     <a class="navbar-brand" href="#">Ember-Sugar</a>
+   </div>
+   <ul class="nav navbar-nav">
+     <li class="active"><a href="#">Leads</a></li>
+     <li><a href="/insertlead">Add Lead</a></li>
+     <li><a href="/deletelead">Delete Lead</a></li>
+   </ul>
+ </div>
+</nav>
+
+
+<h2 align = "center">Leads</h2>
+  <table class="table table-hover table-bordered" width="100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Account Name</th>
+        <th>Date Created</th>
+        <th>Date Modified</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |mod|}}
+      <tr>
+        <td>
+          {{mod.name}}
+        </td>
+        <td>
+          {{mod.status}}
+        </td>
+        <td>
+          {{mod.phone_work}}
+        </td>
+        <td>
+          {{mod.email1}}
+        </td>
+        <td>
+          {{mod.account_name}}
+        </td>
+        <td>
+          {{mod.date_entered}}
+        </td>
+        <td>
+          {{mod.date_modified}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{outlet}}
